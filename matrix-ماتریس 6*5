@@ -1,0 +1,82 @@
+#include "stdafx.h"
+#include "conio.h"
+#include "iostream"
+
+using namespace System;
+using namespace std;
+
+int top = -1;
+char stack[30];
+void push(char);
+char pop();
+
+int main()
+{
+	char a[6][5];
+	int i = 0, j = 0, k = 0, s = 1;
+	
+	// get matrix
+	for (i = 0; i < 6; i++){
+		for (j = 0; j < 5; j++)
+		{
+			cout << "a[" << i + 1 << "][" << j + 1 << "]= ";
+			cin >> a[i][j];
+		}
+	}
+
+	//print matrix
+	for (i = 0; i < 6; i++)
+	{
+		for (j = 0; j < 5; j++)
+		{
+			cout << a[i][j];
+		}
+		cout << "\n";
+	}
+
+
+	cout << "\n\n";
+
+	for (i = 0; i < 5; i++)
+	{
+		for (j = 0; j < 6; j++)
+		{
+			push( a[j][i]);
+		}
+		cout << "\n";
+	}
+
+
+	if (top == -1)
+		cout << "stack is empty";
+	else{
+		for ( i = 0; i < 30; i++)
+		{
+			cout << pop();
+		}
+	}
+		
+
+	getch();
+
+}
+
+void push(char ch){
+
+	if (top == 30){
+		cout << "stack is full......";
+		getch();
+		return;
+	}
+	stack[++top] = ch;
+}
+
+char pop(){
+
+	if (top == -1){
+		cout << "stack is empty";
+		getch();
+		return 0;
+	}
+	return stack[top--];
+}
