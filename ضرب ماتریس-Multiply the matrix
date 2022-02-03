@@ -1,0 +1,44 @@
+#include <iostream.h>
+#include <conio.h>
+
+void main()
+{
+	float a[2][3],b[3][4],c[2][4];
+
+   int i,j,k;
+
+   cout<<"--------------MATRIX 1-------------\n";
+   for(i=0;i<2;i++)
+   	for(j=0;j<3;j++)
+      {
+      	cout<<"Insert the number ("<<i<<","<<j<<"):";
+         cin>>a[i][j];
+      }
+
+   cout<<"--------------MATRIX 2-------------\n";
+   for(i=0;i<3;i++)
+   	for(j=0;j<4;j++)
+      {
+      	cout<<"Insert the number ("<<i<<","<<j<<"):";
+         cin>>a[i][j];
+      }
+
+
+   for(i=0;i<2;i++)
+   	for(j=0;j<4;j++)
+      	for(k=0;k<3;k++)
+         {
+         	c[i][j] += a[i][k] + b[k][j];
+         }
+
+   cout<<"****************MATRIX**************\n";
+   for(i=0;i<2;i++)
+   {
+   	for(j=0;j<4;j++)
+      	cout<<c[i][j]<<"\t";
+
+   	cout<<"\n";
+   }
+
+   getch();
+}
