@@ -1,0 +1,43 @@
+#include <iostream.h>
+#include <conio.h>
+#define max 10
+
+main(){
+//clrscr();
+int i,j,p[max][max];
+
+for(i=0;i<max;i++)
+  for(j=0;j<max;j++)
+   if(i>j)
+    p[i][j]=0;
+   else if(i<j)
+    p[i][j]=1;
+   else
+    p[i][j]=1;
+
+cout<<"\n*******************************************************\n";
+cout<<"    SAMAVi  www.samavi.info    ***    Matrix Up & Down   \n";
+cout<<"*******************************************************\n\n";
+
+for(i=0;i<max;i++){
+    cout<<endl;
+  for(j=0;j<max;j++)
+   cout<<" "<<p[i][j];
+  }
+cout<<endl<<endl<<endl;
+for(i=0;i<max;i++)
+  for(j=0;j<max;j++)
+   if(i>j)
+    p[i][j]=1;
+   else if(i<j)
+    p[i][j]=0;
+   else
+    p[i][j]=1;
+
+for(i=0;i<max;i++){
+  cout<<endl;
+  for(j=0;j<max;j++)
+   cout<<" "<<p[i][j];
+  }
+  getch();
+}
