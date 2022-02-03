@@ -1,0 +1,75 @@
+#include <iostream.h>
+#include <conio.h>
+
+int main()
+{
+int a[6][5];
+int spars[7][3];
+int i = 0, j = 0, k = 0, s = 1;
+
+for (i = 0; i < 6; i++)
+{
+for (j = 0; j < 5; j++)
+{
+cout << "a[" << i + 1 << "][" << j + 1 << "]= ";
+cin >> a[i][j];
+}
+}
+
+cout << " Namayesh Matrix \n";
+
+for (i = 0; i < 6; i++)
+{
+for (j = 0; j < 5; j++)
+{
+cout << a[i][j]<<" ";
+}
+cout << "\n\n";
+}
+
+cout << "\n";
+
+for (i = 0; i < 6; i++){
+for (j = 0; j < 5; j++){
+if (a[i][j] != 0)
+k++;
+}
+}
+
+if (((6 * 5) / 3) > k + 1){
+spars[0][0] = 6;
+spars[0][1] = 5;
+spars[0][2] = k;
+
+for (i = 0; i < 6; i++){
+for (j = 0; j < 5; j++){
+if (a[i][j] != 0)
+{
+spars[s][0] = i;
+spars[s][1] = j;
+spars[s][2] = a[i][j];
+s++;
+}
+}
+}
+}
+else
+{
+cout << " Not Spars ! \n\n\n\t\t";
+
+return 0;
+}
+
+
+cout << "Namayesh Spars";
+for (i = 0; i < k + 1; i++)
+	{
+for (j = 0; j < 3; j++)
+		{
+cout << spars[i][j] <<"\t";
+}
+cout << "\n\n";
+}
+
+getch();
+}
